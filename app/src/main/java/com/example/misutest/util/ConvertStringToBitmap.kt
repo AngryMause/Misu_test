@@ -7,7 +7,7 @@ import android.text.TextPaint
 import com.example.misutest.App
 import java.util.*
 
-class AvatarGenerator {
+class ConvertStringToBitmap {
     companion object {
         private var texSize = 0F
         fun avatarImage(

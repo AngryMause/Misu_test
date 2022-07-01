@@ -109,6 +109,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView"
             app:layout_constraintVertical_bias="0.0" />
 
+
         <TextView
             android:id="@+id/tv_doctor_description"
             android:layout_width="wrap_content"

@@ -1,20 +1,17 @@
 package com.example.misutest.adapter
 
-import android.graphics.Color
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
-import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import androidx.transition.Visibility
-import com.example.misutest.R
 import com.example.misutest.databinding.ItemRvSpecialtyDoctorBinding
 
 class WorkingSpecialtyAdapter() : RecyclerView.Adapter<WorkingSpecialtyAdapter.MyHolder>() {
-    private val list = mutableListOf(" Сімейний лікар ", " Педіатр ", " Ендокринолог ", " Хірург ")
+    private val list = mutableListOf(" Сімейний лікар ",
+        " Отоларинголог ",
+        " Педіатр ",
+        " Ендокринолог ",
+        " Хірург ")
 
     class MyHolder(val binding: ItemRvSpecialtyDoctorBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -32,7 +29,6 @@ class WorkingSpecialtyAdapter() : RecyclerView.Adapter<WorkingSpecialtyAdapter.M
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         return MyHolder(
-
             ItemRvSpecialtyDoctorBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
