@@ -2,6 +2,7 @@ package com.example.misutest.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.misutest.App
@@ -15,15 +16,22 @@ class CardAdapter() :
 
     class MyHolder(val binding: ItemDoctorInformationBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(docDisc: DoctorDescription) {
             val someText = docDisc.doctorName + docDisc.doctorSecondName
             binding.tvDoctorName.text = someText
             binding.tvDoctorSpacialty.text = docDisc.doctorSpecialty
             binding.tvLocation.text = docDisc.cityOfWork
             binding.tvDoctorDescription.text = docDisc.workDescription
+            binding.rvWorkWith.apply {
+                val docWith= DoctorWorkWithAdapter()
+                docWith.addItem(docDisc.list)
+                adapter = docWith
+                layoutManager =
+                    LinearLayoutManager(App.getContext(), RecyclerView.HORIZONTAL, false)
+            }
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         return MyHolder(
             ItemDoctorInformationBinding.inflate(
@@ -43,12 +51,26 @@ class CardAdapter() :
                 docModel.doctorName,
                 docModel.doctorSecondName))
             .into(holder.binding.doctorImage)
+//        holder.binding.rvWorkWith.apply {
+//            doctorWorkWithAdapter.addItem(docModel.list)
+//            adapter = doctorWorkWithAdapter
+//            layoutManager =
+//                LinearLayoutManager(App.getContext(), RecyclerView.HORIZONTAL, false)
+//        }
+//        createAdapter(holder)
     }
 
     override fun getItemCount() = list.size
+
     fun addItems(newItems: List<DoctorDescription>) {
         list.addAll(newItems)
     }
 
+//    private fun createAdapter(myHolder: MyHolder) {
+//        myHolder.binding.rvWorkWith.apply {
+//            adapter = doctorWorkWithAdapter
+//            layoutManager = LinearLayoutManager(App.getContext(), RecyclerView.HORIZONTAL, false)
+//        }
+//    }
 
 }

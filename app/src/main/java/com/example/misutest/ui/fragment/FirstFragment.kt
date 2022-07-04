@@ -9,12 +9,12 @@ import com.example.misutest.adapter.CardAdapter
 import com.example.misutest.adapter.WorkingSpecialtyAdapter
 import com.example.misutest.databinding.FragmentFirstBinding
 import com.example.misutest.model.DoctorDescription
+import com.example.misutest.model.DoctorWorkWith
 
 class FirstFragment : BaseFragment<FragmentFirstBinding>(FragmentFirstBinding::inflate) {
     private lateinit var cardAdapter: CardAdapter
     private lateinit var specialtyAdapter: WorkingSpecialtyAdapter
-    private var list: ArrayList<DoctorDescription> = ArrayList()
-
+    private var doctorDescriptionList: ArrayList<DoctorDescription> = ArrayList()
 
     companion object {
         fun getNewInstance(): FirstFragment {
@@ -24,9 +24,9 @@ class FirstFragment : BaseFragment<FragmentFirstBinding>(FragmentFirstBinding::i
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setDataToModel()
+        setDataToDoctorDescription()
         initCardAdapter()
-        cardAdapter.addItems(list)
+        cardAdapter.addItems(doctorDescriptionList)
         initSpecialtyAdapter()
     }
 
@@ -42,32 +42,39 @@ class FirstFragment : BaseFragment<FragmentFirstBinding>(FragmentFirstBinding::i
         layoutManager = LinearLayoutManager(requireContext())
     }
 
-    private fun setDataToModel() {
+
+    private fun setDataToDoctorDescription() {
         for (i in 0..5) {
             if (i % 2 == 0) {
-                list.add(
+                doctorDescriptionList.add(
                     DoctorDescription(
                         R.drawable.ic_doctor,
-                        "Inna ",
+                        "Ivan",
                         "Gonrat",
                         "Family doctor",
                         "м.Rivne",
+                        listOf(DoctorWorkWith("Діти 0-3р."),
+                            DoctorWorkWith("Дорослі"),
+                            DoctorWorkWith("Covid-19")),
                         "Проводить первинний лікарський патронаж новонародженого "
                     )
                 )
             } else {
-                list.add(
+                doctorDescriptionList.add(
                     DoctorDescription(
                         null,
                         "Vera ",
                         "Rubic",
                         "Family doctor",
                         "м.Тернопіль",
+                        listOf(DoctorWorkWith("Дорослі"), DoctorWorkWith("Covid-19")),
                         "Веде прийом для дітей"
                     )
                 )
             }
         }
+
+
     }
 
 

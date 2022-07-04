@@ -6,6 +6,11 @@ data class DoctorDescription(
     val doctorSecondName: String,
     val doctorSpecialty: String,
     val cityOfWork: String,
+    val list: List<DoctorWorkWith>,
     val workDescription: String,
+)
+
+data class DoctorWorkWith(
+    val workWith: String,
 )
 

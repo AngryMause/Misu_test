@@ -15,14 +15,14 @@
         <entry key="app/src/main/res/drawable/staule.xml" value="0.2325" />
         <entry key="app/src/main/res/drawable/text_stayle.xml" value="0.2325" />
         <entry key="app/src/main/res/drawable/text_style.xml" value="0.109" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_second.xml" value="0.1398148148148148" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/fragment_four.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/item_doctor_information.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_rv_specialty_doctor.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/item_work_with.xml" value="0.29243266353142366" />
       </map>
     </option>
   </component>
