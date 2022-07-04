@@ -7,7 +7,6 @@ class ThirdFragment : BaseFragment<FragmentThirdBinding>(FragmentThirdBinding::i
         fun getNewInstance(): ThirdFragment {
             return ThirdFragment()
         }
-
     }
 
 }

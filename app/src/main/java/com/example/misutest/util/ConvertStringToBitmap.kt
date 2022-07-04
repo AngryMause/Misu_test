@@ -5,9 +5,8 @@ import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
 import android.text.TextPaint
 import com.example.misutest.App
-import java.util.*
 
-class AvatarGenerator {
+class ConvertStringToBitmap {
     companion object {
         private var texSize = 0F
         fun avatarImage(
@@ -53,8 +52,8 @@ class AvatarGenerator {
 
         private fun firstCharacter(name: String, secondName: String): String {
             val concatenation =
-                name.first().toString().uppercase(Locale.ROOT) + secondName.first().toString()
-                    .uppercase(Locale.ROOT)
+                name.first().uppercase() + secondName.first()
+                    .uppercase()
             return concatenation
         }
 
