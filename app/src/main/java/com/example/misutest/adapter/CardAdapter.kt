@@ -13,10 +13,8 @@ import com.example.misutest.util.ConvertStringToBitmap
 class CardAdapter() :
     RecyclerView.Adapter<CardAdapter.MyHolder>() {
     private val list = mutableListOf<DoctorDescription>()
-
     class MyHolder(val binding: ItemDoctorInformationBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun bind(docDisc: DoctorDescription) {
             val someText = docDisc.doctorName + docDisc.doctorSecondName
             binding.tvDoctorName.text = someText
@@ -50,15 +48,7 @@ class CardAdapter() :
                 200,
                 docModel.doctorName,
                 docModel.doctorSecondName))
-            .into(holder.binding.doctorImage)
-//        holder.binding.rvWorkWith.apply {
-//            doctorWorkWithAdapter.addItem(docModel.list)
-//            adapter = doctorWorkWithAdapter
-//            layoutManager =
-//                LinearLayoutManager(App.getContext(), RecyclerView.HORIZONTAL, false)
-//        }
-//        createAdapter(holder)
-    }
+            .into(holder.binding.doctorImage)    }
 
     override fun getItemCount() = list.size
 
@@ -66,11 +56,6 @@ class CardAdapter() :
         list.addAll(newItems)
     }
 
-//    private fun createAdapter(myHolder: MyHolder) {
-//        myHolder.binding.rvWorkWith.apply {
-//            adapter = doctorWorkWithAdapter
-//            layoutManager = LinearLayoutManager(App.getContext(), RecyclerView.HORIZONTAL, false)
-//        }
-//    }
+
 
 }
