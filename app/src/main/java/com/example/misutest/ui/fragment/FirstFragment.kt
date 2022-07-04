@@ -22,8 +22,6 @@ class FirstFragment : BaseFragment<FragmentFirstBinding>(FragmentFirstBinding::i
         }
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setDataToModel()
@@ -44,29 +42,28 @@ class FirstFragment : BaseFragment<FragmentFirstBinding>(FragmentFirstBinding::i
         layoutManager = LinearLayoutManager(requireContext())
     }
 
-
     private fun setDataToModel() {
         for (i in 0..5) {
             if (i % 2 == 0) {
                 list.add(
                     DoctorDescription(
                         R.drawable.ic_doctor,
-                        "Inna " + i,
-                        "Gonrat" + i,
+                        "Inna ",
+                        "Gonrat",
                         "Family doctor",
                         "м.Rivne",
-                        "Працюю із дітками"
+                        "Проводить первинний лікарський патронаж новонародженого "
                     )
                 )
             } else {
                 list.add(
                     DoctorDescription(
                         null,
-                        "Vera " + i,
-                        "Rubic" + i,
+                        "Vera ",
+                        "Rubic",
                         "Family doctor",
                         "м.Тернопіль",
-                        "Приваблива" + i
+                        "Веде прийом для дітей"
                     )
                 )
             }

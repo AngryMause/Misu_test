@@ -1,29 +1,33 @@
 package com.example.misutest.ui.activity
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.misutest.R
 import com.example.misutest.databinding.ActivityMainBinding
 import com.example.misutest.ui.fragment.FirstFragment
 import com.example.misutest.ui.fragment.FourthFragment
 import com.example.misutest.ui.fragment.SecondFragment
 import com.example.misutest.ui.fragment.ThirdFragment
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class MainActivity : AppCompatActivity() {
-    //    private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
     private lateinit var binding: ActivityMainBinding
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        swapFragment()
 
+
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().replace(binding.mainContainer.id, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun swapFragment() {
         binding.tvOne.setTextColor(Color.BLUE)
         replaceFragment(FirstFragment.getNewInstance())
         binding.tvOne.setOnClickListener {
@@ -51,13 +55,6 @@ class MainActivity : AppCompatActivity() {
             binding.tvFour.setTextColor(Color.BLUE)
             replaceFragment(FourthFragment.getNewInstance())
         }
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(binding.mainContainer.id, fragment)
-            .addToBackStack(null)
-            .commit()
-
     }
 
 

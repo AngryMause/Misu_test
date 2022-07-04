@@ -5,7 +5,6 @@ import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
 import android.text.TextPaint
 import com.example.misutest.App
-import java.util.*
 
 class ConvertStringToBitmap {
     companion object {
@@ -53,8 +52,8 @@ class ConvertStringToBitmap {
 
         private fun firstCharacter(name: String, secondName: String): String {
             val concatenation =
-                name.first().toString().uppercase(Locale.ROOT) + secondName.first().toString()
-                    .uppercase(Locale.ROOT)
+                name.first().uppercase() + secondName.first()
+                    .uppercase()
             return concatenation
         }
 

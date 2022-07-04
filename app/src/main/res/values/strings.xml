@@ -3,4 +3,7 @@
     <string name="fragment_second">Fragment Second</string>
     <string name="fragment_four">Fragment Four</string>
     <string name="fragment_third">Fragment Third</string>
+    <string name="children_age"> Діти 0-3 р. </string>
+    <string name="grown_children"> Дорослі </string>
+    <string name="covid_19"> Covid-19 </string>
 </resources>
